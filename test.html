@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>DVD Bounce хаотично</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: sans-serif;
+      color: white;
+      background-image: url("фон.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    form {
+      position: relative;
+      z-index: 1;
+    }
+
+    input[type="radio"] {
+      margin-bottom: 5px;
+    }
+
+    .dvd-logo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: auto;
+      display: none;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    form:has(#watch_dvd:checked) ~ .dvd-logo {
+      display: block;
+      animation: randomMove 20s linear infinite;
+    }
+
+    @keyframes randomMove {
+      0%   { transform: translate(0, 0); }
+      10%  { transform: translate(80vw, 10vh); }
+      20%  { transform: translate(60vw, 70vh); }
+      30%  { transform: translate(10vw, 50vh); }
+      40%  { transform: translate(90vw, 20vh); }
+      50%  { transform: translate(40vw, 80vh); }
+      60%  { transform: translate(70vw, 30vh); }
+      70%  { transform: translate(20vw, 90vh); }
+      80%  { transform: translate(30vw, 20vh); }
+      90%  { transform: translate(95vw, 95vh); }
+      100% { transform: translate(0, 0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Опрос</h1>
+  <form name="test" method="post" action="input1.php">
+    <p><b>Где вы обычно смотрите фильмы:</b><br>
+      <input type="radio" id="watch_cinema" name="watch" value="cinema">
+      <label for="watch_cinema">В кинотеатре</label><br>
+      <input type="radio" id="watch_online" name="watch" value="online">
+      <label for="watch_online">Онлайн</label><br>
+      <input type="radio" id="watch_download" name="watch" value="download">
+      <label for="watch_download">Скачиваю</label><br>
+      <input type="radio" id="watch_tv" name="watch" value="tv">
+      <label for="watch_tv">По телевизору</label><br>
+      <input type="radio" id="watch_dvd" name="watch" value="dvd">
+      <label for="watch_dvd">DVD</label><br>
+    </p>
+
+    <p><b>Ваше имя:</b><br>
+      <input type="text" size="40">
+    </p>
+
+    <p><b>Ваш возраст:</b><br>
+      <input type="number" size="3">
+    </p>
+
+    <p><b>Ваше любимый фильм:</b><br>
+      <input type="text" size="40">
+    </p>
+
+    <p><b>Ваш браузер:</b><br>
+      <input type="radio" name="browser" value="bing"> Bing<br>
+      <input type="radio" name="browser" value="chrome"> Chrome<br>
+      <input type="radio" name="browser" value="opera"> Opera<br>
+      <input type="radio" name="browser" value="firefox"> FireFox<br>
+    </p>
+
+    <p><b>Сколько фильмов вы смотрите в неделю:</b><br>
+      <input type="radio" name="movies_per_week" value="0-1"> 0-1<br>
+      <input type="radio" name="movies_per_week" value="2-4"> 2-4<br>
+      <input type="radio" name="movies_per_week" value="4-6"> 4-6<br>
+      <input type="radio" name="movies_per_week" value="7+"> 7 и больше<br>
+    </p>
+
+    <p><b>Предпочитаете смотреть фильмы:</b><br>
+      <input type="radio" name="watch_with" value="alone"> В одиночку<br>
+      <input type="radio" name="watch_with" value="friends"> С друзьями<br>
+      <input type="radio" name="watch_with" value="family"> С семьей<br>
+      <input type="radio" name="watch_with" value="any"> Не имеет значения<br>
+    </p>
+
+    <p><b>Ваш дюбимый жанр:</b><br>
+      <input type="text" size="40">
+    </p>
+
+    <p><b>Режисер фильма "Остров проклятых":</b><br>
+      <input type="radio" name="director" value="burton"> Тим Бёртон<br>
+      <input type="radio" name="director" value="spielberg"> Стивен Спилберг<br>
+      <input type="radio" name="director" value="scorsese"> Мартин Скорсезе<br>
+      <input type="radio" name="director" value="bay"> Майкл Бэй<br>
+    </p>
+  </form>
+
+  <img src="dvd_logo.png" alt="DVD Logo" class="dvd-logo">
+</body>
+</html>
