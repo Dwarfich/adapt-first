@@ -16,11 +16,10 @@
     font-family: sans-serif;
   }
 
-  /* Контейнер всей страницы */
   .container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* центрируем по горизонтали */
+    align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
     padding-top: 40px;
@@ -54,16 +53,15 @@
     background: #666;
   }
 
-  /* === СЛАЙДЕР === */
-  .slider {
-    position: relative;
-    width: 900px;   /* фиксированная ширина */
-    height: 600px;  /* фиксированная высота */
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255,255,255,0.2);
-    margin-top: 30px;
-  }
+.slider {
+  position: relative;
+  width: 600px;
+  height: 900px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+  margin-top: 30px;
+}
 
   .slides {
     display: flex;
@@ -81,19 +79,17 @@
     flex-shrink: 0;
   }
 
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  /* Переключение слайдов */
   #r1:checked ~ .slides { transform: translateX(0); }
   #r2:checked ~ .slides { transform: translateX(-100%); }
   #r3:checked ~ .slides { transform: translateX(-200%); }
   #r4:checked ~ .slides { transform: translateX(-300%); }
 
-  /* Навигация */
   .nav {
     position: absolute;
     bottom: 15px;
@@ -116,13 +112,21 @@
     background: white;
   }
 
-  /* Активная кнопка */
   #r1:checked ~ .nav label[for="r1"],
   #r2:checked ~ .nav label[for="r2"],
   #r3:checked ~ .nav label[for="r3"],
   #r4:checked ~ .nav label[for="r4"] {
     background: white;
   }
+
+ @media (max-width: 700px) {
+  .slider {
+    width: 80%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+  }
+}
+
 
 </style> 
 </head>
@@ -156,7 +160,6 @@
       <input type="radio" name="r" id="r3">
       <input type="radio" name="r" id="r4">
 
-      <!-- Слайды -->
       <div class="slides">
         <div class="slide"><img src="img/mstiteli.jpg" alt="Мстители"></div>
         <div class="slide"><img src="img/chekpuk.jpg" alt="Чекпук"></div>
@@ -164,7 +167,6 @@
         <div class="slide"><img src="img/avatar.jpg" alt="Аватар"></div>
       </div>
 
-      <!-- Навигация -->
       <div class="nav">
         <label for="r1"></label>
         <label for="r2"></label>
@@ -175,3 +177,4 @@
   </div>
 </body>
 </html>
+
