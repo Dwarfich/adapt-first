@@ -16,7 +16,7 @@
     font-family: sans-serif;
   }
 
-  /* Центрируем содержимое по вертикали с отступами */
+  /* Контейнер всей страницы */
   .container {
     display: flex;
     flex-direction: column;
@@ -54,14 +54,15 @@
     background: #666;
   }
 
-  /* Слайдер */
+  /* === СЛАЙДЕР === */
   .slider {
     position: relative;
-    width: 50vw;
-    height: 40vh;
+    width: 900px;   /* фиксированная ширина */
+    height: 600px;  /* фиксированная высота */
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    margin-top: 30px;
   }
 
   .slides {
@@ -123,56 +124,54 @@
     background: white;
   }
 
-  </style> 
-
+</style> 
 </head>
 
-<body bgcolor="#000000" align="center">
+<body>
+  <div class="container">
     <h2>Регистрация</h2>
 
     <form action="/submit" method="post">
-        <label for="username">Имя:</label><br>
-        <input type="text" id="username" name="username" required><br><br>
+      <label for="username">Имя:</label><br>
+      <input type="text" id="username" name="username" required><br><br>
 
-        <label for="email">Электронная почта:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+      <label for="email">Электронная почта:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
 
-        <label for="password">Пароль:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
+      <label for="password">Пароль:</label><br>
+      <input type="password" id="password" name="password" required><br><br>
 
-        <label for="confirm_password">Подтвердите пароль:</label><br>
-        <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+      <label for="confirm_password">Подтвердите пароль:</label><br>
+      <input type="password" id="confirm_password" name="confirm_password" required><br><br>
 
-        <input type="submit" value="Зарегистрироваться">
+      <input type="submit" value="Зарегистрироваться">
     </form>
-    
-<h1>Предстоящие новинки</h1>
+
+    <h1>Предстоящие новинки</h1>
+
     <div class="slider">
-    <!-- Радиокнопки -->
-    <input type="radio" name="r" id="r1" checked>
-    <input type="radio" name="r" id="r2">
-    <input type="radio" name="r" id="r3">
-    <input type="radio" name="r" id="r4">
+      <!-- Радиокнопки -->
+      <input type="radio" name="r" id="r1" checked>
+      <input type="radio" name="r" id="r2">
+      <input type="radio" name="r" id="r3">
+      <input type="radio" name="r" id="r4">
 
-    <!-- Слайды -->
-    <div class="slides">
-      <div class="slide"><img src="img/мстители.jpg" alt="Мстители"></div>
-      <div class="slide"><img src="img/чекпуk.jpg" alt="чекпук"></div>
-      <div class="slide"><img src="img/достать ножи.jpg" alt="ножи"></div>
-      <div class="slide"><img src="img/аватар.jpg" alt="аватар"></div>
+      <!-- Слайды -->
+      <div class="slides">
+        <div class="slide"><img src="img/mstiteli.jpg" alt="Мстители"></div>
+        <div class="slide"><img src="img/chekpuk.jpg" alt="Чекпук"></div>
+        <div class="slide"><img src="img/knivesout.jpg" alt="Ножи"></div>
+        <div class="slide"><img src="img/avatar.jpg" alt="Аватар"></div>
+      </div>
+
+      <!-- Навигация -->
+      <div class="nav">
+        <label for="r1"></label>
+        <label for="r2"></label>
+        <label for="r3"></label>
+        <label for="r4"></label>
+      </div>
     </div>
-
-
+  </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
