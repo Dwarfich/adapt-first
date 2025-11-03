@@ -44,17 +44,6 @@
     background-size: cover;
     background-position: center;
   }
-
-  .s1 { background-image: url('https://picsum.photos/id/1015/800/600'); }
-  .s2 { background-image: url('https://picsum.photos/id/1016/800/600'); }
-  .s3 { background-image: url('https://picsum.photos/id/1020/800/600'); }
-  .s4 { background-image: url('https://picsum.photos/id/1024/800/600'); }
-
-  #r1:checked ~ .slides { transform: translateX(0); }
-  #r2:checked ~ .slides { transform: translateX(-100%); }
-  #r3:checked ~ .slides { transform: translateX(-200%); }
-  #r4:checked ~ .slides { transform: translateX(-300%); }
-
   .nav {
     position: absolute;
     bottom: 15px;
@@ -118,23 +107,16 @@
 
     <!-- Слайды -->
     <div class="slides">
-      <div class="slide s1"></div>
-      <div class="slide s2"></div>
-      <div class="slide s3"></div>
-      <div class="slide s4"></div>
+      <div class="slide"><img src="https://picsum.photos/id/1015/800/600" alt="Фото 1"></div>
+      <div class="slide"><img src="https://picsum.photos/id/1016/800/600" alt="Фото 2"></div>
+      <div class="slide"><img src="https://picsum.photos/id/1020/800/600" alt="Фото 3"></div>
+      <div class="slide"><img src="https://picsum.photos/id/1024/800/600" alt="Фото 4"></div>
     </div>
 
-    <!-- Навигация -->
-    <div class="nav">
-      <label for="r1"></label>
-      <label for="r2"></label>
-      <label for="r3"></label>
-      <label for="r4"></label>
-    </div>
-  </div>
 
 </body>
 </html>
+
 
 
 
