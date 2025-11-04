@@ -2,141 +2,158 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Регистрация и слайдер</title>
+
 <style>
   * {
-  box-sizing: border-box;
-}
+    box-sizing: border-box;
+  }
 
-body {
-  margin: 0;
-  padding: 0;
-  background: #000;
-  color: white;
-  font-family: sans-serif;
-}
+  body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: white;
+    font-family: sans-serif;
+  }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  padding: 40px 20px;
-}
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+  }
 
-form {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  max-width: 250px;
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-  margin: 5px 0;
-}
-
-input[type="submit"] {
-  background: #444;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background: #666;
-}
-
-.slider {
-  position: relative;
-  width: 600px;
-  height: 900px; 
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255,255,255,0.2);
-  margin-top: 30px;
-}
-
-.slides {
-  display: flex;
-  width: 400%;
-  height: 100%;
-  transition: transform 0.6s ease;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-.slide {
-  width: 100%;
-  flex-shrink: 0;
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-#r1:checked ~ .slides { transform: translateX(0); }
-#r2:checked ~ .slides { transform: translateX(-100%); }
-#r3:checked ~ .slides { transform: translateX(-200%); }
-#r4:checked ~ .slides { transform: translateX(-300%); }
-
-.nav {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-}
-
-.nav label {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.6);
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.nav label:hover {
-  background: white;
-}
-
-#r1:checked ~ .nav label[for="r1"],
-#r2:checked ~ .nav label[for="r2"],
-#r3:checked ~ .nav label[for="r3"],
-#r4:checked ~ .nav label[for="r4"] {
-  background: white;
-}
+  form {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 320px;
+  }
 
   input[type="text"],
   input[type="email"],
   input[type="password"] {
-    max-width: 200px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin: 8px 0;
+    font-size: 16px;
   }
 
-     @media (max-width: 900px) {
-      nav {
-        font-size: 14px;
-      }
-      .menu-btn {
-        font-size: 14px;
-        padding: 6px 10px;
-      }
+  input[type="submit"] {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
 
-</style> 
+  input[type="submit"]:hover {
+    background: #666;
+  }
+
+  h1, h2 {
+    text-align: center;
+  }
+
+  .slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 2/3; /* адаптивная высота */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    margin-top: 20px;
+  }
+
+  .slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    transition: transform 0.6s ease;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .slide {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .nav label {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .nav label:hover {
+    background: white;
+  }
+
+  #r1:checked ~ .slides { transform: translateX(0); }
+  #r2:checked ~ .slides { transform: translateX(-100%); }
+  #r3:checked ~ .slides { transform: translateX(-200%); }
+  #r4:checked ~ .slides { transform: translateX(-300%); }
+
+  #r1:checked ~ .nav label[for="r1"],
+  #r2:checked ~ .nav label[for="r2"],
+  #r3:checked ~ .nav label[for="r3"],
+  #r4:checked ~ .nav label[for="r4"] {
+    background: white;
+  }
+
+  @media (max-width: 600px) {
+    .slider {
+      width: 100%;
+      aspect-ratio: 9/16;
+    }
+
+    .slide img {
+      object-fit: contain;
+      background: #000;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+      font-size: 14px;
+    }
+
+    h1, h2 {
+      font-size: 18px;
+    }
+  }
+</style>
 </head>
 
 <body>
@@ -145,16 +162,16 @@ input[type="radio"] {
 
     <form action="/submit" method="post">
       <label for="username">Имя:</label><br>
-      <input type="text" id="username" name="username" required><br><br>
+      <input type="text" id="username" name="username" required><br>
 
       <label for="email">Электронная почта:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
+      <input type="email" id="email" name="email" required><br>
 
       <label for="password">Пароль:</label><br>
-      <input type="password" id="password" name="password" required><br><br>
+      <input type="password" id="password" name="password" required><br>
 
       <label for="confirm_password">Подтвердите пароль:</label><br>
-      <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+      <input type="password" id="confirm_password" name="confirm_password" required><br>
 
       <input type="submit" value="Зарегистрироваться">
     </form>
@@ -169,7 +186,7 @@ input[type="radio"] {
 
       <div class="slides">
         <div class="slide"><img src="img/мстители.jpg" alt="Мстители"></div>
-        <div class="slide"><img src="img/чекпуk.jpg" alt="Чекпук"></div>
+        <div class="slide"><img src="img/чекпук.jpg" alt="Чекпук"></div>
         <div class="slide"><img src="img/достать ножи.jpg" alt="Ножи"></div>
         <div class="slide"><img src="img/аватар.jpg" alt="Аватар"></div>
       </div>
@@ -184,12 +201,3 @@ input[type="radio"] {
   </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
