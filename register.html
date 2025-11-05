@@ -29,16 +29,31 @@
 
   .slides {
     display: flex;
-    width: 500%;
+    width: 400%;
     transition: transform 0.8s ease-in-out;
   }
 
   .slides img {
     width: 100%;
+    flex: 0 0 100%;
     height: auto;
     object-fit: cover;
   }
 
+  input#r1:checked ~ .slides {
+    transform: translateX(0);
+  }
+  input#r2:checked ~ .slides {
+    transform: translateX(-100%);
+  }
+  input#r3:checked ~ .slides {
+    transform: translateX(-200%);
+  }
+  input#r4:checked ~ .slides {
+    transform: translateX(-300%);
+  }
+
+  /* Навигация (точки) */
   .navigation {
     text-align: center;
     margin-top: 15px;
@@ -53,19 +68,6 @@
     background: #bbb;
     cursor: pointer;
     transition: background 0.3s;
-  }
-
-  input#r1:checked ~ .slides {
-    transform: translateX(0);
-  }
-  input#r2:checked ~ .slides {
-    transform: translateX(-100%);
-  }
-  input#r3:checked ~ .slides {
-    transform: translateX(-200%);
-  }
-  input#r4:checked ~ .slides {
-    transform: translateX(-300%);
   }
 
   input#r1:checked ~ .navigation label[for=r1],
@@ -108,7 +110,3 @@
 
 </body>
 </html>
-
-
-
-
