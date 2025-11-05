@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Слайдер новинок</title>
-
+<title>CSS Слайдер без JavaScript</title>
 <style>
   * {
     box-sizing: border-box;
@@ -12,134 +11,102 @@
 
   body {
     margin: 0;
-    background-color: #000;
-    color: white;
     font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
+    background: #111;
   }
 
   .slider {
-    width: 100%;
-    max-width: 600px;
-    height: 900px;
-    border-radius: 15px;
-    overflow: hidden;
     position: relative;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    background-color: #000;
+    max-width: 900px;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  /* Радиокнопки скрыты */
+  input[type=radio] {
+    display: none;
   }
 
   .slides {
     display: flex;
-    width: 400%;
-    height: 100%;
-    animation: slide 32s infinite;
-    will-change: transform;
-    backface-visibility: hidden;
+    width: 500%;
+    transition: transform 0.8s ease-in-out;
   }
 
-  .slide {
+  .slides img {
     width: 100%;
-    height: 100%;
-    flex-shrink: 0;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    height: auto;
+    object-fit: cover;
   }
 
-  .slide img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    display: block;
-  }
-
-  @keyframes slide {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    45% { transform: translateX(-100%); }
-    50% { transform: translateX(-200%); }
-    70% { transform: translateX(-200%); }
-    75% { transform: translateX(-300%); }
-    95% { transform: translateX(-300%); }
-    100% { transform: translateX(0); }
-  }
-
-  /* Навигационные точки */
+  /* Навигация — точки */
   .navigation {
-    position: absolute;
-    width: 100%;
-    bottom: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+    text-align: center;
+    margin-top: 15px;
   }
 
   .bar {
-    width: 12px;
-    height: 12px;
-    border: 2px solid #fff;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 5px;
     border-radius: 50%;
+    background: #bbb;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background 0.3s;
   }
 
-  .bar:hover {
-    background: #fff;
+  input#r1:checked ~ .slides {
+    transform: translateX(0);
+  }
+  input#r2:checked ~ .slides {
+    transform: translateX(-100%);
+  }
+  input#r3:checked ~ .slides {
+    transform: translateX(-200%);
+  }
+  input#r4:checked ~ .slides {
+    transform: translateX(-300%);
+  }
+
+  input#r1:checked ~ .navigation label[for=r1],
+  input#r2:checked ~ .navigation label[for=r2],
+  input#r3:checked ~ .navigation label[for=r3],
+  input#r4:checked ~ .navigation label[for=r4] {
+    background: white;
   }
 
   @media (max-width: 600px) {
-    .slider {
-      height: auto;
-      aspect-ratio: 2 / 3;
-      max-width: 100%;
-    }
-
-    .slide img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
+    .bar {
+      width: 10px;
+      height: 10px;
     }
   }
 </style>
 </head>
-
 <body>
-  <h1>Предстоящие новинки</h1>
 
-  <div class="slider">
-    <div class="slides">
-      <div class="slide">
-        <img src="img/мстители.jpg" alt="Слайд 1">
-      </div>
-      <div class="slide">
-        <img src="img/аватар.jpg" alt="Слайд 2">
-      </div>
-      <div class="slide">
-        <img src="img/чекпуk.jpg" alt="Слайд 3">
-      </div>
-      <div class="slide">
-        <img src="img/шрек.jpg" alt="Слайд 4">
-      </div>
-    </div>
+<div class="slider">
+  <input type="radio" name="r" id="r1" checked>
+  <input type="radio" name="r" id="r2">
+  <input type="radio" name="r" id="r3">
+  <input type="radio" name="r" id="r4">
 
-    <div class="navigation">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
+  <div class="slides">
+    <img src="https://picsum.photos/id/1018/900/500" alt="Фото 1">
+    <img src="https://picsum.photos/id/1015/900/500" alt="Фото 2">
+    <img src="https://picsum.photos/id/1020/900/500" alt="Фото 3">
+    <img src="https://picsum.photos/id/1036/900/500" alt="Фото 4">
   </div>
+
+  <div class="navigation">
+    <label for="r1" class="bar"></label>
+    <label for="r2" class="bar"></label>
+    <label for="r3" class="bar"></label>
+    <label for="r4" class="bar"></label>
+  </div>
+</div>
+
 </body>
 </html>
