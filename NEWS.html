@@ -46,6 +46,26 @@
     0 0 20px orange,
     0 0 40px darkorange;
 }
+
+  .item {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    overflow: auto; /* чтобы текст не наползал на медиа */
+  }
+
+  .media-right {
+    float: right;
+    margin-left: 20px;
+    max-width: 50%;
+  }
+
+  img.media-right, 
+  video.media-right {
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+  }
   </style>
 </head>
 <body style="background-color: #000000; color: #ffffff;">
@@ -79,43 +99,33 @@
 
       <h1 class="text-center glowing">Важные и интересные новости.</h1>
 
-  <ol>
+<ol>
 
-      <li>
-        <img src="img/Netflix-Logo.webp" width="700" height="300" class="right">
-        <h3>Netflix будет выпускать фильмы Warner Bros. в прокат в случае покупки</h3>
-        <p><a href="https://example.com">Подроднее</a></p>
-      </li>
+  <li class="item">
+    <img src="img/Netflix-Logo.webp" class="media-right" alt="Netflix Logo">
+    <h3>Netflix будет выпускать фильмы Warner Bros. в прокат в случае покупки</h3>
+    <p><a href="https://example.com">Подробнее</a></p>
+  </li>
 
-      <hr>
 
-      <li>
-    <video> 
-    src="img/Avatar_ Fire and Ash _ Official Trailer.mp4" 
-    autoplay 
-    loop 
-    muted 
-    controls 
-    style="width: 600px; max-width: 100%;">
-    </video>
-        <h3>Аватар: Пламя и пепел</h3>
-        <p>Аватар: Пламя и пепел выходит 19 декабря этго года. Спустя 3 года после первой части и 16 лет после первой.</p>
-      </li>
+  <li class="item">
+    <video class="media-right" src="img/Avatar_ Fire and Ash _ Official Trailer.mp4"
+           autoplay loop muted controls></video>
 
-      <hr>
+    <h3>Аватар: Пламя и пепел</h3>
+    <p>Аватар: Пламя и пепел выходит 19 декабря этого года. Спустя 3 года после второй части и 16 лет после первой.</p>
+  </li>
 
-      <li>
-    <video>
-    src="img/videoplayback (9).mp4" 
-    autoplay 
-    loop 
-    muted 
-    controls 
-    style="width: 600px; max-width: 100%;">
-    </video>
-        <h3>Fallout season 2</h3>
-        <p>17 декабря этого года выходит второй сезон среиала Fallout спустя год после первого. Fallout это сериал по моей любимой игровой вселенной, который я с нетерпением жду.</p>
-      </li>
+
+  <li class="item">
+    <video class="media-right" src="img/videoplayback (9).mp4"
+           autoplay loop muted controls></video>
+
+    <h3>Fallout season 2</h3>
+    <p>17 декабря этого года выходит второй сезон сериала Fallout спустя год после первого. Fallout — это сериал по моей любимой игровой вселенной, который я с нетерпением жду.</p>
+  </li>
+
+</ol>
 
 </body>
 </html>
