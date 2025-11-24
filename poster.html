@@ -6,7 +6,8 @@
   <style>
     body {
       font-family: sans-serif;
-      background-color: #f0f0f0;
+      background-color: #000;
+      color: #fff;
       margin: 0;
       padding: 20px;
     }
@@ -26,19 +27,21 @@
 
     .filter-buttons label {
       display: inline-block;
-      padding: 8px 16px;
-      background: #007BFF;
-      color: white;
-      border-radius: 4px;
+      padding: 10px 20px;
+      background: #8a2be2;
+      color: #fff;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: all 0.3s;
       font-size: 16px;
       min-width: 100px;
       text-align: center;
+      box-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2, 0 0 40px #8a2be2;
     }
 
     .filter-buttons label:hover {
-      background: #0056b3;
+      box-shadow: 0 0 20px #da70d6, 0 0 40px #da70d6, 0 0 60px #da70d6;
+      transform: scale(1.05);
     }
 
     .gallery {
@@ -49,15 +52,21 @@
     }
 
     .poster {
-      width: 150px;
+      width: 200px;
+      height: 300px;
       display: none;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(255,255,255,0.2);
+      background-color: #111;
     }
 
     .poster img {
       width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      height: 100%;
+      object-fit: cover;
       display: block;
+      border-radius: 10px;
     }
 
     /* Фильтры */
@@ -106,6 +115,7 @@
 
       .poster {
         width: 45%;
+        height: 250px;
       }
     }
   </style>
@@ -142,19 +152,19 @@
         <img src="img/чужой.png" alt="Sci-Fi 2">
       </div>
       <div class="poster action">
-        <img src="img/03ab813155a46b0241dff12f61672b53.jpg" alt="Action 1">
+        <img src="img/03ab813155a46b0241dff12f61672b53.jpg" alt="Action 3">
       </div>
       <div class="poster comedy">
-        <img src="img/рука.jpg" alt="Comedy 1">
+        <img src="img/рука.jpg" alt="Comedy 3">
       </div>
       <div class="poster sci-fi">
         <img src="img/интерстеллар.jpg" alt="Sci-Fi 1">
       </div>
       <div class="poster action">
-        <img src="img/3c244f46f4.jpg" alt="Action 2">
+        <img src="img/3c244f46f4.jpg" alt="Action 4">
       </div>
       <div class="poster comedy">
-        <img src="img/иван.jpg" alt="Comedy 2">
+        <img src="img/иван.jpg" alt="Comedy 4">
       </div>
       <div class="poster sci-fi">
         <img src="img/осд.jpg" alt="Sci-Fi 2">
@@ -164,5 +174,3 @@
 
 </body>
 </html>
-
-
