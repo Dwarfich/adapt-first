@@ -15,10 +15,6 @@
       display: block;
     }
 
-    li {
-      margin-bottom: 20px;
-    }
-
     .clear {
       clear: both;
     }
@@ -27,6 +23,30 @@
       border: none;
       border-top: 1px solid #555;
       margin: 20px 0;
+    }
+
+    details {
+      margin-bottom: 15px;
+    }
+
+    summary {
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::before {
+      content: "▶ ";
+      transition: 0.2s;
+    }
+
+    details[open] summary::before {
+      content: "▼ ";
     }
   </style>
 </head>
@@ -46,58 +66,58 @@
 
     <ol>
 
-      <li>
+      <details>
+        <summary>Остров проклятых</summary>
         <img src="img/600x900.jpg" width="125" height="160" class="right">
-        <h3>Остров проклятых</h3>
         <p>Два американских судебных пристава отправляются на остров в штате Массачусетс, чтобы расследовать исчезновение пациентки клиники для умалишённых преступников.</p>
         <p>Оценка: 8.4</p>
         <p>Режиссёр: Мартин Скорсезе</p>
         <div class="clear"></div>
-      </li>
+      </details>
 
       <hr>
 
-      <li>
+      <details>
+        <summary>Джентльмены</summary>
         <img src="img/джентельмены.jpg" width="130" height="165" class="right">
-        <h3>Джентльмены</h3>
         <p>Ушлый американец придумал схему нелегального обогащения, используя поместья английской аристократии. Журналист пытается продать историю о преступлениях главного героя.</p>
         <p>Оценка: 8.6</p>
         <p>Режиссёр: Гай Ричи</p>
         <div class="clear"></div>
-      </li>
+      </details>
 
       <hr>
 
-      <li>
+      <details>
+        <summary>Побег из Шоушенка</summary>
         <img src="img/шоушенк.jpg" width="115" height="175" class="right">
-        <h3>Побег из Шоушенка</h3>
         <p>Энди Дюфрейн, обвинённый в убийстве жены, пытается выжить в тюрьме Шоушенк, где царят жестокость и беззаконие.</p>
         <p>Оценка: 9.1</p>
         <p>Режиссёр: Фрэнк Дарабонт</p>
         <div class="clear"></div>
-      </li>
+      </details>
 
       <hr>
 
-      <li>
+      <details>
+        <summary>Интерстеллар</summary>
         <img src="img/интерстеллар.jpg" width="120" height="175" class="right">
-        <h3>Интерстеллар</h3>
         <p>Команда исследователей отправляется через червоточину, чтобы найти новую пригодную для жизни планету.</p>
         <p>Оценка: 8.7</p>
         <p>Режиссёр: Кристофер Нолан</p>
         <div class="clear"></div>
-      </li>
+      </details>
 
       <hr>
 
-      <li>
+      <details>
+        <summary>1+1</summary>
         <img src="img/1+1.jpg" width="120" height="175" class="right">
-        <h3>1+1</h3>
         <p>Богатый аристократ Филипп после несчастного случая нанимает себе в помощники Дрисса, что меняет жизнь обоих.</p>
         <p>Оценка: 8.9</p>
         <p>Режиссёры: Эрик Толедано, Оливье Накаш</p>
         <div class="clear"></div>
-      </li>
+      </details>
 
     </ol>
   </li>
@@ -110,36 +130,36 @@
 
     <ol>
 
-      <li>
+      <details>
+        <summary>Очень странные дела</summary>
         <img src="img/осд.jpg" width="130" height="175" class="right">
-        <h3>Очень странные дела</h3>
         <p>В городе Хоукинс пропадает подросток Уилл, и вскоре его друзья обнаруживают вмешательство потусторонних сил.</p>
         <p>Оценка: 8.4</p>
         <p>Режиссёры: Мэтт Даффер, Росс Даффер, Шон Леви</p>
         <div class="clear"></div>
-      </li>
+      </details>
 
       <hr>
 
-      <li>
+      <details>
+        <summary>Чужой</summary>
         <img src="img/чужой.png" width="130" height="175" class="right">
-        <h3>Чужой</h3>
         <p>Экипаж космического корабля получает неизвестный сигнал и оказывается втянут в смертельно опасное столкновение с инопланетной формой жизни.</p>
         <p>Оценка: 8.1</p>
         <p>Режиссёр: Ридли Скотт</p>
         <div class="clear"></div>
-      </li>
+      </details>
 
       <hr>
 
-      <li>
+      <details>
+        <summary>Ходячие мертвецы</summary>
         <img src="img/ходячие.jpg" width="130" height="175" class="right">
-        <h3>Ходячие мертвецы</h3>
         <p>После зомби-апокалипсиса шериф Рик Граймс ведёт группу выживших в поисках безопасного места.</p>
         <p>Оценка: 8.0</p>
         <p>Режиссёр: Грег Никотеро</p>
         <div class="clear"></div>
-      </li>
+      </details>
 
     </ol>
   </li>
