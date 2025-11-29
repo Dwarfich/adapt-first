@@ -61,11 +61,23 @@
         font-size: 14px;
         padding: 6px 10px;
       }
+
+      .form-wrapper {
+  width: 400px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
   </style>
 </head>
 <body>
   <h1>Опрос</h1>
+<div class="form-wrapper">
+  <h1>Опрос</h1>
+
   <form name="test" method="post" action="input1.php">
+
     <p><b>Где вы обычно смотрите фильмы:</b><br>
       <input type="radio" id="watch_cinema" name="watch" value="cinema">
       <label for="watch_cinema">В кинотеатре</label><br>
@@ -112,20 +124,23 @@
       <input type="radio" name="watch_with" value="any"> Не имеет значения<br>
     </p>
 
-    <p><b>Ваш дюбимый жанр:</b><br>
+    <p><b>Ваш любимый жанр:</b><br>
       <input type="text" size="40">
     </p>
 
-    <p><b>Режисер фильма "Остров проклятых":</b><br>
+    <p><b>Режиссер фильма "Остров проклятых":</b><br>
       <input type="radio" name="director" value="burton"> Тим Бёртон<br>
       <input type="radio" name="director" value="spielberg"> Стивен Спилберг<br>
       <input type="radio" name="director" value="scorsese"> Мартин Скорсезе<br>
       <input type="radio" name="director" value="bay"> Майкл Бэй<br>
     </p>
+
   </form>
+</div>
 
   <img src="img/dvd_logo.png" alt="DVD Logo" class="dvd-logo">
 </body>
 
 </html>
+
 
