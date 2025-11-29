@@ -13,11 +13,22 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+
+      /* Центровка формы */
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
     }
 
-    form {
-      position: relative;
+    .form-wrapper {
+      width: 420px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
       z-index: 1;
+      position: relative;
     }
 
     input[type="radio"] {
@@ -53,26 +64,16 @@
       90%  { transform: translate(95vw, 95vh); }
       100% { transform: translate(0, 0); }
     }
-      @media (max-width: 900px) {
-      nav {
-        font-size: 14px;
-      }
-      .menu-btn {
-        font-size: 14px;
-        padding: 6px 10px;
-      }
 
+    @media (max-width: 900px) {
       .form-wrapper {
-  width: 400px;
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 10px;
-}
+        width: 90%;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Опрос</h1>
+
 <div class="form-wrapper">
   <h1>Опрос</h1>
 
@@ -99,7 +100,7 @@
       <input type="number" size="3">
     </p>
 
-    <p><b>Ваше любимый фильм:</b><br>
+    <p><b>Ваш любимый фильм:</b><br>
       <input type="text" size="40">
     </p>
 
@@ -128,7 +129,7 @@
       <input type="text" size="40">
     </p>
 
-    <p><b>Режиссер фильма "Остров проклятых":</b><br>
+    <p><b>Режиссёр фильма "Остров проклятых":</b><br>
       <input type="radio" name="director" value="burton"> Тим Бёртон<br>
       <input type="radio" name="director" value="spielberg"> Стивен Спилберг<br>
       <input type="radio" name="director" value="scorsese"> Мартин Скорсезе<br>
@@ -138,9 +139,8 @@
   </form>
 </div>
 
-  <img src="img/dvd_logo.png" alt="DVD Logo" class="dvd-logo">
+<img src="img/dvd_logo.png" alt="DVD Logo" class="dvd-logo">
+
 </body>
-
 </html>
-
 
