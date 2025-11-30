@@ -75,35 +75,32 @@
       position: relative;
     }
 
-    aside {
-      background-color: rgba(255, 250, 240, 0.95);
-      width: 200px;
-      padding: 15px;
-      border-right: 1px solid #ccc;
-      position: fixed;
-      top: 0;
-      left: -220px;
-      height: 100%;
-      transition: left 0.3s ease;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.3);
-      z-index: 100;
-    }
+aside {
+  background-color: rgba(0, 0, 0, 0.8); 
+  width: 200px;
+  padding: 15px;
+  border-right: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  left: -220px;
+  height: 100%;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  z-index: 100;
+  color: white; 
+}
 
-    aside.active {
-      left: 0;
-    }
+aside a {
+  display: block;
+  margin-bottom: 12px;
+  color: #00aaff; 
+  text-decoration: none;
+  font-weight: 500;
+}
 
-    aside a {
-      display: block;
-      margin-bottom: 12px;
-      color: #007BFF;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    aside a:hover {
-      text-decoration: underline;
-    }
+aside a:hover {
+  text-decoration: underline;
+}
 
     .main {
       flex: 1;
@@ -179,4 +176,5 @@
   </script>
 </body>
 </html>
+
 
