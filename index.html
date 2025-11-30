@@ -75,8 +75,8 @@
       position: relative;
     }
 
-aside {
-  background-color: rgba(0, 0, 0, 0.8); 
+  aside {
+  background-color: rgba(0, 0, 0, 0.8);
   width: 200px;
   padding: 15px;
   border-right: 1px solid #ccc;
@@ -87,20 +87,22 @@ aside {
   transition: left 0.3s ease;
   box-shadow: 2px 0 5px rgba(0,0,0,0.3);
   z-index: 100;
-  color: white; 
-}
-
-aside a {
+  }
+  
+  aside.active {
+    left: 0;
+  }
+    
+  aside a {
   display: block;
   margin-bottom: 12px;
-  color: #00aaff; 
+  color: #007BFF;
   text-decoration: none;
   font-weight: 500;
-}
-
-aside a:hover {
+  }
+  aside a:hover {
   text-decoration: underline;
-}
+  }
 
     .main {
       flex: 1;
@@ -176,5 +178,6 @@ aside a:hover {
   </script>
 </body>
 </html>
+
 
 
